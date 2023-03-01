@@ -44,3 +44,10 @@ def process(Env, Operation, Ram, Inst,  ID, Memory, Instructions, StTime, Proces
                 f" {ID}, has entered to the queue Status:WAITING "
             )
             yield Env.timeout(random.randint(1, 5))
+
+    yield Memory.put(Ram)
+    Time.append(Begginingtime)
+    print(
+        f" {ID}, process Status:TERMINATED on time {Env.now:.1f}. Amount of RAM returned: {Ram}. Amount of MEMORY available: {Memory.level}"
+    )
+
