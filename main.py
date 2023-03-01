@@ -29,3 +29,18 @@ def process(Env, Operation, Ram, Inst,  ID, Memory, Instructions, StTime, Proces
     print(
         f"{ID}, in queue, Status:READY. Time: {Env.now:.1f}. Amount of instructions in queue: {Instructions}"
     )
+
+    while Instructions > 0:
+        with Processor.request() as request:
+            yield request
+            Instructions -= Inst
+            yield Env.timeout(Operation)
+            print(
+                f" {ID} process in queue Status:READY on time {Env.now:.1f}. Amount of instructions in queue: {Instructions}"
+            )
+
+        if Instructions > 0 and random.randint(1, 2) == 1:
+            print(
+                f" {ID}, has entered to the queue Status:WAITING "
+            )
+            yield Env.timeout(random.randint(1, 5))
