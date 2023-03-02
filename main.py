@@ -13,12 +13,12 @@ ancho = 100
 texto_cent = texto.center(ancho)
 print(texto_cent)
 
-Interval = 10
-RamCapacity = 100
+Interval = 1 # [1, 5, 10]
+RamCapacity = 200 # [100, 200]
 ProcessMemory = 10
-CpuSpeed = 3
-NumProcesses = 25  # [25, 50, 100, 150, 200]
-AmountProcess = 10
+CpuSpeed = 6 # [3, 6]
+NumProcesses = 200  # [25, 50, 100, 150, 200]
+AmountProcess = 1
 StartTime = 0
 Time = []
 
@@ -87,7 +87,7 @@ for c in range(NumProcesses):
     Env.process(
         process(Env=Env, Ram=RAM, Instructions=Instructions,
                 ID=f"Process {c}", CPU=CpuSpeed, Operation=AmountProcess,
-                Memory=Memory, Processor=Processor, StTime=StartTime)
+                Memory=Memory, Processor=Processor, StTime=TimeStarted)
     )
 
 # Displays the average time of operations
