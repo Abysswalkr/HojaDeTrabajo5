@@ -17,7 +17,7 @@ Interval = 10
 RamCapacity = 100
 ProcessMemory = 10
 CpuSpeed = 3
-NumProcesses = 50  # [25, 50, 100, 150, 200]
+NumProcesses = 25  # [25, 50, 100, 150, 200]
 AmountProcess = 10
 StartTime = 0
 Time = []
@@ -93,7 +93,7 @@ for c in range(NumProcesses):
 # Displays the average time of operations
 Env.run()
 promed = numpy.mean(Time)
-Desviation = numpy.std(Time)
+Deviation = numpy.std(Time)
 print(
-    f" The El tiempo promedio de finalización de los procesos es de {promed} segundos con una desviacion estandar de {Desviation}\n"
+    f" The average time for all processes is: {promed} seconds and the standard deviation is: {Deviation}\n"
 )
