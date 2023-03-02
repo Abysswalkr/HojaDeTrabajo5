@@ -3,6 +3,11 @@
 # ID: 22907                  #
 # Date: 1 - 03 - 2023        #
 # ############################
+# Refereces
+#  https://www.geeksforgeeks.org/basics-of-discrete-event-simulation-using-simpy/
+#  https://realpython.com/simpy-simulating-with-python/
+#  https://docs.python.org/3/library/random.html
+
 
 import random
 import simpy
@@ -13,12 +18,12 @@ ancho = 100
 texto_cent = texto.center(ancho)
 print(texto_cent)
 
-Interval = 1 # [1, 5, 10]
-RamCapacity = 200 # [100, 200]
+Interval = 10 # [1, 5, 10]
+RamCapacity = 100 # [100, 200]
 ProcessMemory = 10
-CpuSpeed = 6 # [3, 6]
+CpuSpeed = 3 # [3, 6]
 NumProcesses = 200  # [25, 50, 100, 150, 200]
-AmountProcess = 1
+AmountProcess = 2
 StartTime = 0
 Time = []
 
